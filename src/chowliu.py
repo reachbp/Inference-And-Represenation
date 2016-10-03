@@ -114,7 +114,7 @@ def print_uai():
     # Add node potentials
     for i in range(cx.shape[0]):
         str += "2 \n"
-        str += "{} {}\n".format(1-mprob[i], mprob[i])
+        str += " {} {}\n".format(1-mprob[i], mprob[i])
         str += "\n"
     # Add edge potentials
     for i,j,v in zip(cx.row, cx.col, cx.data):
@@ -124,7 +124,7 @@ def print_uai():
         str += "4 \n"
         for index_1 in {0,1}:
             for indeX_2 in {0,1}:
-                str += "{} ".format(adjMatrix[i][j][index_1*2 + indeX_2]/total)
+                str += " {} ".format(adjMatrix[i][j][index_1*2 + indeX_2]/total)
             str += "\n"
         str += "\n"
     f = open('../data/uai.dot', 'w')
